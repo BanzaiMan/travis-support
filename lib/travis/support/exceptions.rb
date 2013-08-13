@@ -1,5 +1,6 @@
 module Travis
   module Exceptions
+    autoload :Adapter,  'travis/support/exceptions/adapter'
     autoload :Handling, 'travis/support/exceptions/handling'
     autoload :Reporter, 'travis/support/exceptions/reporter'
 
