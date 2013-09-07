@@ -11,6 +11,7 @@ module Travis
   autoload :Helpers,         'travis/support/helpers'
   autoload :Instrumentation, 'travis/support/instrumentation'
   autoload :LogSubscriber,   'travis/support/log_subscriber'
+  autoload :Logger,          'travis/support/logger'
   autoload :Logging,         'travis/support/logging'
   autoload :Memory,          'travis/support/memory'
   autoload :NewRelic,        'travis/support/new_relic'
@@ -22,14 +23,14 @@ module Travis
     end
 
     def logger
-      @logger ||= Logging.configure(Logger.new(STDOUT))
+      @logger ||= Logger.configure(Logger.new(STDOUT))
     end
 
     def logger=(logger)
-      @logger = Logging.configure(logger)
+      @logger = Logger.configure(logger)
     end
 
-    def uuid= (uuid)
+    def uuid=(uuid)
       Thread.current[:uuid] = uuid
     end
 
