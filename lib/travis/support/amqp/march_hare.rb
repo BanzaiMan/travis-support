@@ -1,10 +1,10 @@
-require 'hot_bunnies'
+require 'march_hare'
 
 module Travis
   module Amqp
-    autoload :Consumer,        'travis/support/amqp/hot_bunnies/consumer'
-    autoload :Publisher,       'travis/support/amqp/hot_bunnies/publisher'
-    autoload :FanoutPublisher, 'travis/support/amqp/hot_bunnies/publisher'
+    autoload :Consumer,        'travis/support/amqp/march_hare/consumer'
+    autoload :Publisher,       'travis/support/amqp/march_hare/publisher'
+    autoload :FanoutPublisher, 'travis/support/amqp/march_hare/publisher'
 
     class << self
       def config
@@ -20,7 +20,7 @@ module Travis
       end
 
       def connection
-        @connection ||= HotBunnies.connect(config)
+        @connection ||= MarchHare.connect(config)
       end
       alias :connect :connection
 
