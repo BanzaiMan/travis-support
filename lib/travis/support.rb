@@ -14,6 +14,7 @@ module Travis
   autoload :Logger,          'travis/support/logger'
   autoload :Logging,         'travis/support/logging'
   autoload :Memory,          'travis/support/memory'
+  autoload :Metrics,         'travis/support/metrics'
   autoload :NewRelic,        'travis/support/new_relic'
   autoload :Retryable,       'travis/support/retryable'
 
